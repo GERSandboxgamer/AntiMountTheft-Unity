@@ -1,0 +1,5 @@
+name: AntiMountTheft
+main: de.sbg.unity.antimounttheft.AntiMountTheft
+version: 2.0.0
+author: Sandboxgamer
+description: "Ani-Theft plugin for mountable NPCs"
