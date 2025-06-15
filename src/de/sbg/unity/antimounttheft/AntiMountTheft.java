@@ -5,6 +5,7 @@
 package de.sbg.unity.antimounttheft;
 
 import de.sbg.unity.antimounttheft.Database.AmtDatabase;
+import de.sbg.unity.antimounttheft.NPC.NpcManager;
 import de.sbg.unity.configmanager.ConfigData;
 import de.sbg.unity.configmanager.ConfigManager;
 import java.io.IOException;
@@ -19,6 +20,7 @@ public class AntiMountTheft extends Plugin{
     public  amtConfig Config;
     private amtConsole Console;
     public AmtDatabase databse;
+    public NpcManager npcManager;
     
     
     @Override
@@ -33,8 +35,8 @@ public class AntiMountTheft extends Plugin{
             Console.sendErr("ini", "Can not load Config!");
         }
         if (loadConfig) {
+            this.npcManager = new NpcManager();
             this.databse = new AmtDatabase(this, Console);
-            
         }
     }
 

@@ -36,14 +36,14 @@ public class AmtDatabase {
                 + "UID BIGINT, "
                 + "Name TXT, "
                 + "Owner TXT, "
-                + "Spezial INTEGER, "
+                + "Spezial TXT, "
                 + "More TXT "
                 + "); ");
         database.execute("CREATE TABLE IF NOT EXISTS Members ("
-                + "ID INTEGER PRIMARY KEY NOT NULL, " //AUTOINCREMENT
                 + "NpcID INTEGER, "
                 + "MemberUID TXT, "
-                + "More TXT "
+                + "PRIMARY KEY (NpcID, MemberUID), "
+                + "FOREIGN KEY (NpcID) REFERENCES Npc(ID) ON DELETE CASCADE"
                 + "); ");
     }
 
